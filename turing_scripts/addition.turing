@@ -1,0 +1,21 @@
+Initial = q_0
+Final = q_f
+
+# Tally mark addition with the form addition(1^n+1^m) = 1^(n+m) #
+
+# Final state, all 1's have been added to the right side #
+δ(q_0, +) = (q_f, ☐, L)
+
+# Remove the leftmost one and travel to the far right side #
+δ(q_0, 1) = (q_1, ☐, R)
+δ(q_1, 1) = (q_1, 1, R)
+
+δ(q_1, +) = (q_1, +, R)
+
+# Traverse left to find another 1 #
+δ(q_1, ☐) = (q_2, 1, L)
+δ(q_2, 1) = (q_2, 1, L)
+δ(q_2, +) = (q_2, +, L)
+
+# Restart the process #
+δ(q_2, ☐) = (q_0, ☐, R)

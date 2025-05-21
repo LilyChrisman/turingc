@@ -1,0 +1,20 @@
+Initial = q_0
+Final = q_4
+
+# checks if a string is in L = {a^nb^n : n >= 0} #
+
+δ(q_0, a) = (q_1, x, R)
+δ(q_1, a) = (q_1, a, R)
+
+δ(q_1, y) = (q_1, y, R)
+δ(q_1, b) = (q_2, y, L)
+δ(q_2, y) = (q_2, y, L)
+
+δ(q_2, a) = (q_2, a, L)
+δ(q_2, x) = (q_0, x, R)
+
+δ(q_0, y) = (q_3, y, R)
+δ(q_3, y) = (q_3, y, R)
+
+δ(q_3, ☐) = (q_4, ☐, R)
+
